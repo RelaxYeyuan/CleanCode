@@ -2,14 +2,11 @@ package com.example.myapplication;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Test11 {
+public class DoubleLinkedListTest {
 
     @Test
     public void test() {
-        TestLinkedList linkedList = new TestLinkedList();
+        DoubleLinkedList linkedList = new DoubleLinkedList();
         linkedList.addToEnd(4);
         linkedList.addToEnd(1);
         linkedList.addToEnd(2);

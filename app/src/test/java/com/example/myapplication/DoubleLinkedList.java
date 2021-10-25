@@ -1,9 +1,10 @@
 package com.example.myapplication;
 
+
 /**
  * 双链表
  */
-public class TestLinkedList<E> {
+public class DoubleLinkedList<E> {
 
     /**
      * 结点里面保存数据域，前驱的地址域，后继的地址域
@@ -23,7 +24,7 @@ public class TestLinkedList<E> {
         }
     }
 
-    public TestLinkedList() {
+    public DoubleLinkedList() {
 
     }
 

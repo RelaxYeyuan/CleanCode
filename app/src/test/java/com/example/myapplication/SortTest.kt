@@ -8,7 +8,7 @@ import org.junit.Test
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-class ExampleUnitTest {
+class SortTest {
     @Test
     fun test() {
         tt(3)
@@ -16,6 +16,7 @@ class ExampleUnitTest {
 
     /**
      * 冒泡排序
+     * 两两比较，较大的往后移动
      * 每次循环把最大值置于末尾，从而得到从小到大的数组
      */
     private fun bubbleTest(array: IntArray) {
@@ -48,18 +49,9 @@ class ExampleUnitTest {
     }
 
     /**
-     * 选择排序：从第一个下标开始，从数组的第二个值开始比较，得到最小值所对应的下标，然后和第一个值进行交换
-     * 第一次循环 8 3 1 6 5 ; index = 0 = 8
-     * 1:3 8 1 6 5
-     * 2:3 1 8 6 5
-     * 3:3 1 6 8 5
-     * 4:3 1 6 5 8
-     * 5:1 3 6 5 8
-     * 第二次循环 1 3 6 5 8 ; index = 1 = 3
-     * 1:3 6 5 8
-     * 2:3 6 5 8
-     * 3:3 5 6 8
-     * 4:3 5 6 8
+     * 选择排序：它的工作原理如下。首先在未排序序列中找到最小（大）元素，
+     * 存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，
+     * 然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。
      */
     private fun selectSort(array: IntArray) {
         for (i in array) {
@@ -68,12 +60,17 @@ class ExampleUnitTest {
         println()
 
         for (j in array.indices) {
+            //从0个角标开始查找
             var index = j
+            //+1:每次都从j的下一个元素开始比较
             for (i in j + 1 until array.size) {
+                //如果j+1的元素小于j元素
                 if (array[i] < array[index]) {
+                    //保存最小值元素的下标
                     index = i
                 }
             }
+            //如果最小值下标不是j，则把当前最小值下标的元素放在首位
             if (index != j) {
                 val temp = array[index]
                 array[index] = array[j]
