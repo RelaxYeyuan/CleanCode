@@ -12,7 +12,7 @@ public class SearchBinaryTreeTest {
 
     @Test
     public void test() {
-        int[] array = new int[]{5, 3, 1, 7, 4, 8, 2, 9, 6};
+        int[] array = new int[]{5, 3, 1, 2, 4, 7, 6};
 
         SearchBinaryTree tree = new SearchBinaryTree();
         for (int i : array) {
@@ -21,8 +21,11 @@ public class SearchBinaryTreeTest {
 
         tree.midOrderTraverse(tree.root);
 
-        SearchBinaryTree.TreeNode node = tree.searchNode(7);
-        System.out.println("----");
-        System.out.println("查询：" + node.data);
+        SearchBinaryTree.TreeNode node = tree.searchNode(3);
+        System.out.println(" 删除" + node.data);
+        tree.delNode(node);
+
+        tree.midOrderTraverse(tree.root);
+
     }
 }
